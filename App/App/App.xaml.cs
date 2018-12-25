@@ -8,11 +8,12 @@ namespace App
     using Views;
     public partial class App : Application
     {
+        
         public App()
         {
             InitializeComponent();
 
-            this.MainPage = new LoginPage();
+            this.MainPage = new NavigationPage(new LoginPage());
         }
 
         protected override void OnStart()
