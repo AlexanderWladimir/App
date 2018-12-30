@@ -6,21 +6,24 @@
              Title="Login"
              >
     <ContentPage.Content>
-        <ScrollView>
+        <ScrollView
+            BindingContext="{Binding Login}">
             <StackLayout
-            Padding="10,20,10,5">
+            Padding="5">
                 <Label 
                 FontAttributes="Bold"
                 FontSize="Large"
                 HorizontalOptions="Center"
-                Text="Reserva de turnos">
+                Text="Reserva de turnos"
+                TextColor="Black">
                 </Label>
                 <Image
             Source="logo.png"
             WidthRequest="100">
 
                 </Image>
-                <Grid >
+                <Grid 
+                    VerticalOptions="CenterAndExpand">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="2*"/>
@@ -29,61 +32,82 @@
                 Grid.Row="0"
                 Grid.Column="0"
                 Text="E-Mail"
-                VerticalOptions="Center">
+                VerticalOptions="Center"
+                TextColor="Black">
                     </Label>
                     <Entry 
                 Grid.Row="0"
                 Grid.Column="1"
                 Keyboard="Email"
+                Text="{Binding Email, Mode=TwoWay}"
                 Placeholder="Ingrese su email...">
                     </Entry>
                     <Label 
                 Grid.Row="1"
                 Grid.Column="0"
                 Text="Contraseña"
-                VerticalOptions="Center">
+                VerticalOptions="Center"
+                TextColor="Black">
                     </Label>
                     <Entry
                 Grid.Row="1"
                 Grid.Column="1"
                 IsPassword="True"
-                Placeholder="Ingrese su contraseña"></Entry>
+                Placeholder="Ingrese su contraseña"
+                Text="{Binding Password, Mode=TwoWay}"
+                TextColor="Black">
+                    </Entry>
                 </Grid>
+                <ActivityIndicator 
+                    IsRunning="{Binding IsRunning, Mode=TwoWay}"
+                    VerticalOptions="CenterAndExpand">
+                </ActivityIndicator>
                 <StackLayout
-            Orientation="Horizontal">
+                Orientation="Horizontal"
+                VerticalOptions="CenterAndExpand">
                     <Label
                 HorizontalOptions="StartAndExpand"
                 Text="Recordar en este dispositivo"
+                TextColor="Black"
                 VerticalOptions="Center">
                     </Label>
                     <Switch
+                        IsToggled="{Binding IsRemembered,Mode=TwoWay}"
                 HorizontalOptions="End"
                ></Switch>
                 </StackLayout>
-
-                <ActivityIndicator>
-
-                </ActivityIndicator>
+                <Label
+                    HorizontalOptions="Center"
+                    Text="Recuperar Contraseña?"
+                    TextColor="Blue"
+                    VerticalOptions="CenterAndExpand"
+                    >
+                </Label>
                 <StackLayout
-            Margin="40,0">
+                Margin="40,0"
+                    VerticalOptions="CenterAndExpand">
                     <Button
                 BorderRadius="25"
                 BackgroundColor="#F3F781"
+                Command="{Binding LoginCommand}"
                 HeightRequest="50"
                 Text="Login"
-                TextColor="Black">
+                TextColor="Black"
+                VerticalOptions="CenterAndExpand">
                     </Button>
                     <Button
                 BorderRadius="25"
                 BackgroundColor="#F3F781"
                 HeightRequest="50"
                 Text="Registrar"
-                TextColor="Black">
+                TextColor="Black"
+                VerticalOptions="CenterAndExpand">
                     </Button>
                 </StackLayout>
                 <StackLayout
-            Orientation="Horizontal"
-            HorizontalOptions="Center">
+                Orientation="Horizontal"
+                HorizontalOptions="Center"
+                VerticalOptions="CenterAndExpand">
                     <Image 
                 WidthRequest="70"
                 Source="facebook.png"></Image>
@@ -91,7 +115,7 @@
                 WidthRequest="60"
                 Source="twiiter.png"></Image>
                     <Image
-                WidthRequest="60"
+                WidthRequest="70"
                 Source="instagram.png"></Image>
                 </StackLayout>
             </StackLayout>
