@@ -1,7 +1,7 @@
 ﻿
 namespace App.ViewModels
 {
-    using GalaSoft.MvvmLight.Command;
+    
     using System;
     using System.Windows.Input;
 
@@ -41,14 +41,7 @@ namespace App.ViewModels
         #endregion
 
         #region Commands
-        public ICommand LoginCommand
-        {
-            get
-                {
-                return new RelayCommand(Login);
-                }
-
-        }
+        
 
         private void Login()
         {

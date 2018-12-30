@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App.Views.ListsPage"
+             BindingContext="{Binding Main, Source={StaticResource Locator}}"
+             Title="Lists">
+    <ContentPage.Content>
+        <StackLayout
+            BindingContext="{Binding Lists}"
+            Padding="5px">
+            <Label 
+                Text="Hola hola lsts"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
